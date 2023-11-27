@@ -22,7 +22,16 @@ Below is the Circuit Diagram of my password machine.
 ![](./imgs/circuit-diagram.jpg)
 
 ## Implementation
+The Arduino program is a bit more complicated than the HW10 clock project. I created three integer types to store the input: `int pw0 = 0, pw1 = 0, pw2 = 0;`. Since my program validates each input right away, these three integers function as Boolean values, For example, if the first input is correct, the value of `pw0` is 1, otherwise is 0. I also created a `int counter` to store the number of button presses. 
 
+Since there are 6 states, I wrote 6 functions: `state0()`, `state1()`, `state2()`, `state3()`, `state4()`, and `state5()`. 
+
+* `state0()`: reset `counter`, `pw0`, `pw1`, `pw2` to 0, turn off red and green LEDs.
+* `state1()`: set `pw0`.
+* `state2()`: set `pw1`.
+* `state3()`: set `pw2`, then validate the password sequence.
+* `state4()`: turn on the green LED for 2 seconds, then go to `state0()`.
+* `state4()`: turn on the red LED for 2 seconds, then go to `state0()`. 
 
 ## Circuit Images
 <p align="center">
@@ -40,8 +49,14 @@ Below is the Circuit Diagram of my password machine.
 </p>
 
 ## Video
+Below are my test cases for my password machine. 
+
+![](./imgs/test-cases.jpg)
+
+Below is the video of my password machine. 
+
 <div align="center" style="width:50%;">
-      <a href="https://www.youtube.com/watch?v=GPBdwgR1eQE">
-         <img src="https://img.youtube.com/vi/GPBdwgR1eQE/0.jpg" style="width:50%;">
+      <a href="https://www.youtube.com/watch?v=Fppjp3z56JI">
+         <img src="https://img.youtube.com/vi/Fppjp3z56JI/0.jpg" style="width:50%;">
       </a>
 </div>
